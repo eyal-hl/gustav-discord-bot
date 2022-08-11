@@ -6,8 +6,8 @@ import { CommandParser } from "../../models/commandParser";
 export class CopyCommand implements Command {
   commandNames = ["Copy", "copy"];
 
-  async help(message: Message): Promise<void> {
-    await message.reply(`Use ${config.prefix}copy for you message to be copied.`);
+  help(): string {
+    return (`Use ${config.prefix}copy for you message to be copied.`);
   }
 
   async run(command: CommandParser): Promise<void> {

@@ -6,8 +6,8 @@ import { CommandParser } from "../models/commandParser";
 export class TimeCommand implements Command {
   commandNames = ["time"];
 
-  async help(message: Message): Promise<void> {
-    message.reply(`Use ${config.prefix}time to current time.`);
+  help(): string {
+    return `Use ${config.prefix}time to get current time.`;
   }
 
   async run(command: CommandParser): Promise<void> {
