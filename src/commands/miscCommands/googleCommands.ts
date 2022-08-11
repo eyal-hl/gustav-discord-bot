@@ -4,7 +4,7 @@ import { CommandParser } from "../../models/commandParser";
 import Scraper from "images-scraper"
 
 
-const google = new Scraper({safe:false, tbs:{}, puppeteer:{}});
+const google = new Scraper({safe:false, tbs:{}, puppeteer:{executablePath:"google-chrome", ignoreDefaultArgs:['--no-sandbox','--disable-setuid-sandbox']}});
 
 
 export class picCommand implements Command {
