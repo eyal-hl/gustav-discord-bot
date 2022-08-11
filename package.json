@@ -11,7 +11,9 @@
     "prebuild": "rimraf ./build",
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "hstop": "heroku ps:scale web=0",
+    "hstart": "heroku ps:scale web=1"
   },
   "repository": {
     "type": "git",
