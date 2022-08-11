@@ -15,9 +15,9 @@ export class picCommand implements Command {
   }
 
   async run(command: CommandParser): Promise<void> {
-    const results = await google.scrape(command.args.slice(1).join(" "), Number(command.args[0]))
-    
-    
+      const results = await google.scrape(command.args.slice(1).join(" "), Number(command.args[0]))
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
     await command.originalMessage.channel.send("",{files:results.map(result=>result.url)});
   }
 
