@@ -1,4 +1,5 @@
 import { Message } from "discord.js";
+import { CommandParser } from "../models/commandParser";
 
 export default interface Command {
   /**
@@ -8,8 +9,11 @@ export default interface Command {
   readonly commandNames: string[];
 
   /** Usage documentation. */
-  help(commandPrefix: string): string;
+  help(commandPrefix: Message): Promise<void>;
 
   /** Execute the command. */
-  run(parsedUserCommand: Message): Promise<void>;
+  run(commandParsed: CommandParser): Promise<void>;
+
+  /** Description of the command */
+  description():string;
 }

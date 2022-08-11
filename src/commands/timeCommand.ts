@@ -1,15 +1,22 @@
 import Command from "./commandInterface";
+import config from "../config/botConfig"
 import { Message } from "discord.js";
+import { CommandParser } from "../models/commandParser";
 
 export class TimeCommand implements Command {
   commandNames = ["time"];
 
-  help(commandPrefix: string): string {
-    return `Use ${commandPrefix}time to current time.`;
+  async help(message: Message): Promise<void> {
+    message.reply(`Use ${config.prefix}time to current time.`);
   }
 
-  async run(message: Message): Promise<void> {
+  async run(command: CommandParser): Promise<void> {
     const now = new Date();
-    await message.reply(`${now.getHours()} : ${now.getMinutes()}`);
+    await command.originalMessage.reply(`${now.getHours()} : ${now.getMinutes()}`);
+  }
+  description(): string {
+      return "something"
   }
 }
+
+

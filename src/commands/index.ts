@@ -13,3 +13,5 @@
 
 export * from "./greetCommand";
 export * from "./timeCommand";
+
+export * from "./leagueCommands/chestCommands"
