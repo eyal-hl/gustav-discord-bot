@@ -1,10 +1,9 @@
 import Command from "../commandInterface";
 import config  from "../../config/botConfig"; "../../config/botConfig"
 import { CommandParser } from "../../models/commandParser";
-import Scraper from "images-scraper"
-
-
-const google = new Scraper({safe:false, tbs:{}, puppeteer:{executablePath:"google-chrome", ignoreDefaultArgs:['--no-sandbox','--disable-setuid-sandbox']}});
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+import gis from "g-i-s"
 
 
 export class picCommand implements Command {
@@ -15,10 +14,9 @@ export class picCommand implements Command {
   }
 
   async run(command: CommandParser): Promise<void> {
-      const results = await google.scrape(command.args.slice(1).join(" "), Number(command.args[0]))
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-    await command.originalMessage.channel.send("",{files:results.map(result=>result.url)});
+    await gis(command.args.slice(1).join(' '), async (error:string,results:{url:string,width:number,height:number}[])=>{
+        await command.originalMessage.channel.send("",{files:results.slice(0,Number(command.args[0])).map(result=>result.url)})
+    });
   }
 
   description(): string {
