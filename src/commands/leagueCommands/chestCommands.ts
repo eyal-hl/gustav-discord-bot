@@ -1,6 +1,5 @@
 import Command from "../commandInterface";
 import config  from "../../config/botConfig"; "../../config/botConfig"
-import { Message } from "discord.js";
 import { CommandParser } from "../../models/commandParser";
 
 export class CopyCommand implements Command {

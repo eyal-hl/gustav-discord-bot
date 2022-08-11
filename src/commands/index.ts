@@ -15,3 +15,5 @@ export * from "./greetCommand";
 export * from "./timeCommand";
 
 export * from "./leagueCommands/chestCommands"
+
+export * from "./miscCommands/googleCommands"
