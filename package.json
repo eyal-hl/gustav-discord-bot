@@ -12,8 +12,8 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node build/index.js",
-    "hstop": "heroku ps:scale web=0",
-    "hstart": "heroku ps:scale web=1"
+    "hstop": "heroku ps:scale worker=0",
+    "hstart": "heroku ps:scale worker=1"
   },
   "repository": {
     "type": "git",
