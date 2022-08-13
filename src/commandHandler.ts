@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { GreetCommand, TimeCommand, CopyCommand, picCommand } from "./commands";
+import { GreetCommand, TimeCommand, ChestCommand, picCommand, rosinerCommand } from "./commands";
 import Command from "./commands/commandInterface";
 import { CommandParser } from "./models/commandParser";
 
@@ -14,8 +14,9 @@ export default class CommandHandler {
     const commandClasses = [
       GreetCommand,
       TimeCommand,
-      CopyCommand,
-      picCommand
+      ChestCommand,
+      picCommand,
+      rosinerCommand
     ];
 
     this.commands = commandClasses.map(commandClass => new commandClass());

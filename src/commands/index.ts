@@ -17,3 +17,4 @@ export * from "./timeCommand";
 export * from "./leagueCommands/chestCommands"
 
 export * from "./miscCommands/googleCommands"
+export * from "./miscCommands/randomCommands"
