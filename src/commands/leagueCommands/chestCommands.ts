@@ -66,7 +66,7 @@ export class ChestCommand implements Command {
           buffers.push(buffer);
         })
       }
-      await new Promise(r => setTimeout(r, 100));
+      await new Promise(r => setTimeout(r, 200));
       
       
       img = await combineImage(buffers,{direction:"row"})
@@ -76,7 +76,7 @@ export class ChestCommand implements Command {
     }    
     
     img.write('tmp.png')
-    await new Promise(r => setTimeout(r, 100));
+    await new Promise(r => setTimeout(r, 200));
     command.originalMessage.channel.send("",{files:['tmp.png']});
   }
 
