@@ -20,7 +20,7 @@ export class ChestCommand implements Command {
     let region = "";
     let summonerName = "";
     if (command.args.length == 1){
-      const alias = aliases[command.args[0]]
+      const alias = aliases[command.args[0].toLowerCase()]
       if (alias){
         region = alias.region;
         summonerName = alias.summonerName;
