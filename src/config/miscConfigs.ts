@@ -7,7 +7,7 @@ export const aliases:{[name:string]:alias} = {
     "ranushke":{region:"EUNE",summonerName:"lol cave troll"},
     "mathan":{region:"EUNE",summonerName:"Mathan"},
     "faker":{region:"KR",summonerName:"Hide on bush"},
-    "rosiner2":{region:"KR",summonerName:"HummingSlayer"},
+    "rosiner2":{region:"EUNE",summonerName:"HummingSlayer"},
 
 }
 
